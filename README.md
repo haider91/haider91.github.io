@@ -14,7 +14,7 @@ This repository contains the source code for my personal developer portfolio. It
 
 ## 🛠️ Tech Stack & Tools
 
-- **Frontend & Styling:** HTML5, Tailwind CSS, JavaScript (ES6+), React
+- **Frontend & Styling:** HTML5, CSS3, Bootstrap, JavaScript (ES6+), jQuery
 - **Icons & Assets:** Lucide Icons / FontAwesome
 - **Deployment & Hosting:** GitHub Pages
 - **Version Control:** Git & GitHub
