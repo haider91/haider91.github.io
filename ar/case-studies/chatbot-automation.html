@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+<script>
+  (function () {
+    var saved = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved === 'dark' || (!saved && prefersDark)) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>روبوت محادثة توثيقي بالذكاء الاصطناعي — دراسة حالة | حيدر عيسى</title>
+<meta name="description" content="دراسة حالة هندسية: روبوت محادثة توثيقي معتمد على RAG، بمسار إدخال بيانات آلي، بحث متجهي، وتصعيد بشري عبر Microsoft Teams، من تطوير حيدر عيسى.">
+
+<link rel="alternate" hreflang="en" href="https://haider91.github.io/case-studies/chatbot-automation.html">
+<link rel="alternate" hreflang="ar" href="https://haider91.github.io/ar/case-studies/chatbot-automation.html">
+<link rel="alternate" hreflang="x-default" href="https://haider91.github.io/case-studies/chatbot-automation.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: { extend: { fontFamily: { sans: ['Cairo', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] } } }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Cairo', 'Inter', ui-sans-serif, system-ui, sans-serif; }
+</style>
+</head>
+<body class="bg-white dark:bg-slate-950 text-slate-700 dark:text-slate-300 antialiased transition-colors duration-300 min-h-screen flex flex-col">
+
+<header class="sticky top-0 z-50 border-b border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md">
+  <nav class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="../index.html" class="flex items-center gap-2 font-bold text-slate-900 dark:text-white">
+      <span class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-sm">HI</span>
+      <span class="hidden sm:inline">حيدر عيسى</span>
+    </a>
+    <div class="flex items-center gap-2">
+      <a href="../../case-studies/chatbot-automation.html" hreflang="en" lang="en" class="inline-flex items-center px-3 h-9 rounded-lg border border-slate-200 dark:border-slate-800 text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+        English
+      </a>
+      <button id="theme-toggle" aria-label="تبديل الوضع الداكن" class="w-9 h-9 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+        <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+        <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main class="flex-1">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <a href="../index.html#projects" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline mb-8">
+      <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      العودة إلى معرض الأعمال
+    </a>
+
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0">
+        <i data-lucide="bot" class="w-6 h-6"></i>
+      </div>
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">روبوت محادثة توثيقي ذكي</h1>
+        <p class="text-sm text-slate-500 dark:text-slate-500">أتمتة دعم معتمدة على RAG</p>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-2 mt-5 mb-10">
+      <span class="skill-badge">n8n</span><span class="skill-badge">OpenAI GPT-4o-mini</span><span class="skill-badge">text-embedding-3-small</span>
+      <span class="skill-badge">Supabase / pgvector</span><span class="skill-badge">LangChain</span><span class="skill-badge">Microsoft Teams (Graph API)</span>
+    </div>
+
+    <div class="space-y-12">
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">نظرة عامة</h2>
+        <p class="leading-relaxed">روبوت محادثة معتمد على تقنية RAG (التوليد المعزَّز بالاسترجاع) يحوّل توثيق المنتج إلى محرك دعم ذكي — يجيب على أسئلة العملاء فوراً وبنفس اللغة التي كُتب بها السؤال، مع رابط مباشر للمقالة المصدر مع كل إجابة.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">التحدي</h2>
+        <p class="leading-relaxed">كانت مقالات التوثيق الطويلة، التي غالباً ما تتجاوز 3000 كلمة، صعبة البحث عبر المطابقة النصية البسيطة للكلمات المفتاحية — ما يضطر العميل لقراءة الصفحة كاملة بحثاً عن إجابة واحدة. كذلك، أي نموذج لغوي عام كان سيولّد بسهولة إجابة تبدو منطقية لكنها خاطئة بدل الاعتراف بعدم معرفته، وهذا غير مقبول بسياق دعم منتج. وأخيراً، الأسئلة التقنية الواردة خارج ساعات العمل ما كان إلها أي مسار للوصول لشخص حقيقي: لا شيء كان يلتقطها أو يوثّقها أو يوجّهها للمتابعة.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">الحل الهندسي والبنية المعمارية</h2>
+        <p class="leading-relaxed mb-6">يعمل النظام كمسارَي أتمتة عبر n8n — الأول لإدخال التوثيق ضمن قاعدة معرفة قابلة للبحث، والثاني للإجابة على الأسئلة وتصعيد ما يتعذّر الإجابة عليه:</p>
+
+        <ul class="space-y-4">
+          <li class="flex gap-3">
+            <i data-lucide="database" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">مسار إدخال بيانات آلي:</span> يستخرج مقالات التوثيق من قاعدة البيانات، ينظّف ويقسّم كل مقالة، يولّد تمثيلات المتجهات (embeddings) عبر OpenAI، ويخزّن المتجهات مع بيانات وصفية منظَّمة داخل مخزن Supabase/pgvector — كل ذلك ضمن سير عمل n8n مجدول، دون أي إعادة فهرسة يدوية.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="scissors" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">تجزئة بتداخل محسوب:</span> تُقسَّم المقالات إلى مقاطع من 800 إلى 1000 حرف، بتداخل من 100 إلى 150 حرفاً بين كل مقطع وتاليه — بحيث لا تُبتر أو تُفقد أي إجابة تمتد عبر حدود فقرتين بالمقالة الأصلية.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="tags" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">بيانات وصفية منظَّمة لكل مقطع:</span> كل مقطع يحمل معرّف المقالة، وعنوانها، ورابط المصدر، والتصنيف، وتاريخ آخر تحديث — ما يتيح للنموذج فلترة البحث حسب التصنيف، والاستشهاد بالمصدر الدقيق، وتفادي المحتوى المكرر.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="brain" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">توليد معزَّز بالاسترجاع مؤسَّس على المصدر:</span> يُحوَّل سؤال المستخدم إلى تمثيل متجهي، يُطابَق مع أكثر 3 إلى 5 مقاطع صلة عبر تشابه المتجهات، ثم يُحقن كسياق لنموذج GPT-4o-mini عبر سلسلة استرجاع بـ LangChain — مع تعليمات صارمة للنموذج بالإجابة حصراً من ذلك السياق، لا من معرفته العامة.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="link-2" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">إجابات موثّقة المصدر وثنائية اللغة:</span> كل إجابة تُصاغ بنفس لغة سؤال المستخدم (عربي أو إنكليزي) وتتضمن رابطاً مباشراً للمقالة المصدر — ما يحوّل الروبوت من مجرد "آلة إجابات" إلى أداة تصفّح فعلية.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="bell-ring" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">تصعيد بشري آلي:</span> عند عدم وجود مقطع ذي صلة بالسؤال، ينتقل النموذج إلى وضع جمع بيانات محادثي قصير، يأخذ بيانات تواصل العميل، يسجّل الطلب بجدول بيانات، ويرسل تنبيهاً منسّقاً إلى قناة Microsoft Teams ليتابعه شخص من الفريق.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">النتيجة الرئيسية</h2>
+        <p class="leading-relaxed">تسليم روبوت دعم مؤسَّس بالكامل على التوثيق الفعلي، بإجابات موثّقة المصدر وبدون أي "هلوسة" من النموذج، وتغطية فورية دائمة للأسئلة التقنية، ومسار تصعيد آلي يوثّق ويوجّه كل سؤال بلا إجابة إلى شخص حقيقي — فوق مخزن متجهات مفهرس بـ HNSW مصمَّم للتوسّع إلى مئات الآلاف من مقاطع التوثيق دون أي تراجع بسرعة الاسترجاع.</p>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="border-t border-slate-200 dark:border-slate-800 py-8">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 dark:text-slate-500">
+    <p>&copy; <span id="year"></span> حيدر عيسى. جميع الحقوق محفوظة.</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+  document.getElementById('theme-toggle').addEventListener('click', function () {
+    var isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<style>
+  .skill-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: rgb(241 245 249);
+    color: rgb(51 65 85);
+    border: 1px solid rgb(226 232 240);
+  }
+  .dark .skill-badge {
+    background-color: rgb(30 41 59);
+    color: rgb(203 213 225);
+    border-color: rgb(51 65 85);
+  }
+</style>
+</body>
+</html>

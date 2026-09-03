@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CloudSellPOS — دراسة حالة | حيدر عيسى</title>
-<meta name="description" content="دراسة حالة هندسية: CloudSellPOS، منصة محاسبة ونقاط بيع سحابية من تطوير حيدر عيسى.">
+<meta name="description" content="دراسة حالة هندسية: CloudSellPOS، منصة ERP ونقاط بيع سحابية بمحرك محاسبة آلي التوازن، وامتثال كامل لفوترة ZATCA الإلكترونية (المرحلة الثانية)، من تطوير حيدر عيسى.">
 
 <link rel="alternate" hreflang="en" href="https://haider91.github.io/case-studies/cloudsellpos.html">
 <link rel="alternate" hreflang="ar" href="https://haider91.github.io/ar/case-studies/cloudsellpos.html">
@@ -56,32 +56,79 @@
 </header>
 
 <main class="flex-1">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
     <a href="../index.html#projects" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline mb-8">
       <i data-lucide="arrow-right" class="w-4 h-4"></i>
       العودة إلى معرض الأعمال
     </a>
 
     <div class="flex items-center gap-3 mb-4">
-      <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+      <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0">
         <i data-lucide="receipt" class="w-6 h-6"></i>
       </div>
       <div>
         <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">CloudSellPOS</h1>
-        <p class="text-sm text-slate-500 dark:text-slate-500">منصة محاسبة ونقاط بيع سحابية</p>
+        <p class="text-sm text-slate-500 dark:text-slate-500">منصة ERP ونقاط بيع سحابية</p>
       </div>
     </div>
 
-    <div class="mt-12 flex flex-col items-center justify-center text-center py-16 px-6 rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/40">
-      <i data-lucide="hammer" class="w-8 h-8 text-slate-400 dark:text-slate-600 mb-4"></i>
-      <h2 class="font-bold text-lg text-slate-900 dark:text-white">دراسة الحالة الكاملة قريباً</h2>
-      <p class="mt-2 max-w-md text-sm text-slate-500 dark:text-slate-500">هذه الصفحة ستتضمن تفاصيل البنية الهندسية، والتكامل مع فوترة ZATCA الإلكترونية، والمساعد المالي الذكي CloudSell Copilot ضمن منصة CloudSellPOS.</p>
+    <div class="flex flex-wrap gap-2 mt-5 mb-10">
+      <span class="skill-badge">Laravel</span><span class="skill-badge">PHP</span><span class="skill-badge">MySQL</span>
+      <span class="skill-badge">ZATCA / XAdES / XML UBL 2.1</span><span class="skill-badge">محرك محاسبة متعدد العملات</span>
+      <span class="skill-badge">Multi-tenancy</span><span class="skill-badge">بنية سحابية</span>
+    </div>
+
+    <div class="space-y-12">
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">نظرة عامة</h2>
+        <p class="leading-relaxed">CloudSellPOS منصة نقاط بيع وERP سحابية بالكامل، مصممة للشركات الصغيرة والمتوسطة. تستبدل الدفاتر الورقية وجداول Excel بنظام رقمي مركزي واحد، يمنح أصحاب الأعمال تحكماً فورياً بالحسابات والمخزون والتقارير المالية من أي جهاز، وبدون أي تنصيب محلي.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">التحدي</h2>
+        <p class="leading-relaxed">كانت الشركات التجارية والتوزيعية المتنامية عالقة بمحاسبة يدوية عالية الخطأ: فواتير وسندات دفع مفقودة أو غير متتبَّعة، مخزون موزّع على أكثر من موقع يبتعد تدريجياً عمّا هو موجود فعلياً على الرفوف، صناديق نقدية لمندوبي المبيعات الميدانيين يصعب مراقبتها لحظياً، وإدارة بلا تقارير موثوقة تعتمد عليها بقراراتها. وكان إغلاق السنة المالية نقطة الضعف الأكبر: فور إغلاق الفترة، كان تصحيح أي خطأ يتطلب إعادة فتح الدفاتر يدوياً بلا طريقة آمنة لإعادة حساب كل ما يترتب على ذلك التصحيح لاحقاً.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">الحل الهندسي والبنية المعمارية</h2>
+        <p class="leading-relaxed mb-6">بُنيت المنصة حول سبع وحدات متكاملة — الحسابات، الفواتير، السندات، الأصناف، المخزون، العملات، والتقارير — تعمل جميعها فوق نواة محاسبية آلية واحدة:</p>
+
+        <ul class="space-y-4">
+          <li class="flex gap-3">
+            <i data-lucide="scale" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">محرك محاسبة آلي التوازن:</span> كل فاتورة أو سند شراء أو تحويل أو قيد ينشئ تلقائياً قيداً محاسبياً مزدوجاً متوازناً بالكامل. تعديل القيود يدوياً معطّل بتصميم النظام، ما يضمن توازناً دائماً لميزان المراجعة.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="coins" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">حسابات متعددة العملات بشكل أصيل:</span> تحتفظ الحسابات برصيد حقيقي بكل عملة تتعامل بها بدل فرض قيد تحويل يومي، ويُحسب فرق سعر الصرف تلقائياً عند إغلاق الفترة.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="file-check-2" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">امتثال لفوترة ZATCA الإلكترونية (المرحلة الثانية):</span> مساران للتكامل مبنيان على التوقيع الرقمي والتحقق عبر XAdES والتوافق مع XML UBL 2.1 — مسار آلي يرسل الفاتورة فور الاعتماد مع ختم تشفيري ورمز QR، ومسار يدوي يتيح للمشرف تأجيل الإرسال أثناء التدقيق أو انقطاع الاتصال بالإنترنت.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="history" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">محرك إعادة حساب للفترات المُغلقة:</span> يستطيع المدير المالي إعادة فتح آخر دورة مالية مُغلقة وتعديلها، ويعيد النظام تلقائياً اشتقاق كل الأرصدة والترحيلات المترتبة دون الحاجة لإعادة إدخال يدوية.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="shield-check" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">أثر تدقيق ثلاثي الطبقات:</span> سجلات دخول وخروج على مستوى النظام، أرشيف لسير العمل يحتفظ بالنسخ السابقة للمستندات المعدَّلة، وأرشيف مخصص للقيود المالية يوثّق كل تعديل على دفتر الأستاذ.</span>
+          </li>
+        </ul>
+
+        <p class="leading-relaxed mt-6">تم أيضاً بناء مساعد مالي مدعوم بالذكاء الاصطناعي فوق طبقة البيانات هذه، باسم <span class="font-semibold text-slate-900 dark:text-white">CloudSell Copilot</span>، لعرض تحليلات مالية ورؤى أعمال فورية.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">النتيجة الرئيسية</h2>
+        <p class="leading-relaxed">تسليم منصة ERP/POS متكاملة تضم 7 وحدات مترابطة، بمحرك محاسبة آلي التوازن بالكامل، ودعم أصيل لتعدد العملات، وامتثال كامل لمتطلبات ZATCA المرحلة الثانية — تعمل كنظام سحابي 100% بدون أي تنصيب، مع أثر تدقيق ثلاثي الطبقات يضمن تتبعاً مالياً كاملاً.</p>
+      </section>
     </div>
   </div>
 </main>
 
 <footer class="border-t border-slate-200 dark:border-slate-800 py-8">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 dark:text-slate-500">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 dark:text-slate-500">
     <p>&copy; <span id="year"></span> حيدر عيسى. جميع الحقوق محفوظة.</p>
   </div>
 </footer>
@@ -95,5 +142,24 @@
   });
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
+<style>
+  .skill-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: rgb(241 245 249);
+    color: rgb(51 65 85);
+    border: 1px solid rgb(226 232 240);
+  }
+  .dark .skill-badge {
+    background-color: rgb(30 41 59);
+    color: rgb(203 213 225);
+    border-color: rgb(51 65 85);
+  }
+</style>
 </body>
 </html>

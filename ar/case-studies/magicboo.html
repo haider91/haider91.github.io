@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MagicBoo — دراسة حالة | حيدر عيسى</title>
-<meta name="description" content="دراسة حالة هندسية: MagicBoo، منصة توليد مواقع آلية متعددة القطاعات من تطوير حيدر عيسى.">
+<meta name="description" content="دراسة حالة هندسية: MagicBoo، منصة بناء مواقع آلية معتمدة على القوالب، بإعداد تلقائي للموقع، ونظام إدارة محتوى مدمج، ودعم ثنائي اللغة (عربي/إنكليزي)، من تطوير حيدر عيسى.">
 
 <link rel="alternate" hreflang="en" href="https://haider91.github.io/case-studies/magicboo.html">
 <link rel="alternate" hreflang="ar" href="https://haider91.github.io/ar/case-studies/magicboo.html">
@@ -56,32 +56,81 @@
 </header>
 
 <main class="flex-1">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
     <a href="../index.html#projects" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline mb-8">
       <i data-lucide="arrow-right" class="w-4 h-4"></i>
       العودة إلى معرض الأعمال
     </a>
 
     <div class="flex items-center gap-3 mb-4">
-      <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+      <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0">
         <i data-lucide="layout-template" class="w-6 h-6"></i>
       </div>
       <div>
         <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">MagicBoo</h1>
-        <p class="text-sm text-slate-500 dark:text-slate-500">منصة توليد مواقع آلية</p>
+        <p class="text-sm text-slate-500 dark:text-slate-500">منصة بناء مواقع آلية</p>
       </div>
     </div>
 
-    <div class="mt-12 flex flex-col items-center justify-center text-center py-16 px-6 rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/40">
-      <i data-lucide="hammer" class="w-8 h-8 text-slate-400 dark:text-slate-600 mb-4"></i>
-      <h2 class="font-bold text-lg text-slate-900 dark:text-white">دراسة الحالة الكاملة قريباً</h2>
-      <p class="mt-2 max-w-md text-sm text-slate-500 dark:text-slate-500">هذه الصفحة ستتضمن تفاصيل محرك القوالب المعياري والإعداد التلقائي للـ Backend وراء منصة MagicBoo لتوليد المواقع متعددة القطاعات.</p>
+    <div class="flex flex-wrap gap-2 mt-5 mb-10">
+      <span class="skill-badge">Laravel</span><span class="skill-badge">PHP</span><span class="skill-badge">MySQL</span>
+      <span class="skill-badge">محرك قوالب</span><span class="skill-badge">إعداد تلقائي</span>
+      <span class="skill-badge">نظام إدارة محتوى مدمج</span><span class="skill-badge">ثنائي اللغة (عربي/إنكليزي)</span>
+    </div>
+
+    <div class="space-y-12">
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">نظرة عامة</h2>
+        <p class="leading-relaxed">MagicBoo منصة بناء مواقع معتمدة على القوالب، تأخذ المستخدم من نقطة الصفر إلى موقع كامل وجاهز خلال أقل من خمس دقائق — بدون أي برمجة أو خبرة تصميم. تخدم أصحاب الأعمال والمبدعين ورواد الأعمال الذين يحتاجون حضوراً احترافياً على الويب دون توظيف مطوّر.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">التحدي</h2>
+        <p class="leading-relaxed">كان المستخدمون غير التقنيين بحاجة لطريقة تُطلق موقعاً احترافياً متجاوباً بالكامل وبسرعة — مع القدرة على تخصيص حقيقي للهوية البصرية (الألوان، الخطوط، المحتوى) بدل الاكتفاء بقالب عام، والاستمرار بتحديث ذلك المحتوى لاحقاً دون لمس أي كود أو تقديم طلب لمطوّر. كان لازم أيضاً للمنصة أن تخدم جمهوراً عربياً وإنكليزياً منذ اليوم الأول، وأن تمتلك آلية آلية موثوقة للتعامل مع مصير بيانات الموقع بعد انتهاء صلاحية الاشتراك.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">الحل الهندسي والبنية المعمارية</h2>
+        <p class="leading-relaxed mb-6">بُنيت المنصة حول محرك قوالب معياري ومسار إعداد آلي يحوّل اختيار القالب إلى موقع فعلي جاهز:</p>
+
+        <ul class="space-y-4">
+          <li class="flex gap-3">
+            <i data-lucide="layout-template" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">محرك قوالب معياري:</span> مكتبة من أكثر من 30 قالباً جاهزاً ومتجاوباً بالكامل، تغطي مواقع الأعمال والمتاجر الإلكترونية والمدونات ومعارض الأعمال، وكل قالب قابل للاستبدال دون المساس بقاعدة الكود الأساسية.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="rocket" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">إعداد تلقائي للموقع:</span> اختيار القالب يُنشئ تلقائياً نسخة موقع كاملة الإعداد وجاهزة للعمل — وهذا يختصر ما كان عادة عملية إعداد يدوية إلى مسار توليد فوري عند الطلب.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="settings-2" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">نظام إدارة محتوى مدمج:</span> كل موقع مُولَّد يأتي مع نظام إدارة محتوى (CMS) متكامل، يسمح لصاحبه بتعديل المحتوى والصفحات والبنية مباشرة — بدون الحاجة لمطوّر أو إعادة نشر.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="palette" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">طبقة تخصيص مباشرة:</span> بعد اختيار القالب، يمكن تخصيص الألوان والخطوط والهوية البصرية مباشرة فوق نظام القوالب دون كسر بنيته الأساسية.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="languages" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">تسليم ثنائي اللغة (عربي وإنكليزي):</span> تدعم المنصة وكل موقع مُولَّد اللغتين العربية والإنكليزية بالكامل، بما فيها اتجاه RTL، انطلاقاً من نموذج محتوى واحد.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="database" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">دورة حياة حساب آلية:</span> انتهاء صلاحية الاشتراك يفعّل نافذة سماح محددة، تليها عملية احتفاظ بالبيانات آلية بالكامل — ما يلغي الحاجة لتنظيف الحسابات يدوياً.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">النتيجة الرئيسية</h2>
+        <p class="leading-relaxed">تسليم منصة ذاتية الخدمة تأخذ المستخدم من اختيار القالب إلى موقع كامل ومتجاوب وثنائي اللغة خلال أقل من خمس دقائق، مدعومة بمكتبة تضم أكثر من 30 قالباً ونظام دورة حياة آلي يدير بيانات الموقع من لحظة الإنشاء وحتى انتهاء الاشتراك — بدون أي كود وبدون أي إعداد يدوي.</p>
+      </section>
     </div>
   </div>
 </main>
 
 <footer class="border-t border-slate-200 dark:border-slate-800 py-8">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 dark:text-slate-500">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 dark:text-slate-500">
     <p>&copy; <span id="year"></span> حيدر عيسى. جميع الحقوق محفوظة.</p>
   </div>
 </footer>
@@ -95,5 +144,24 @@
   });
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
+<style>
+  .skill-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: rgb(241 245 249);
+    color: rgb(51 65 85);
+    border: 1px solid rgb(226 232 240);
+  }
+  .dark .skill-badge {
+    background-color: rgb(30 41 59);
+    color: rgb(203 213 225);
+    border-color: rgb(51 65 85);
+  }
+</style>
 </body>
 </html>

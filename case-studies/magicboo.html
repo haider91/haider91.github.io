@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MagicBoo — Case Study | Haider Issa</title>
-<meta name="description" content="Engineering case study: MagicBoo, an automated multi-sector site generation platform by Haider Issa.">
+<meta name="description" content="Engineering case study: MagicBoo, a template-driven website builder platform with automated site provisioning, a built-in CMS, and bilingual (AR/EN) delivery, by Haider Issa.">
 
 <link rel="alternate" hreflang="en" href="https://haider91.github.io/case-studies/magicboo.html">
 <link rel="alternate" hreflang="ar" href="https://haider91.github.io/ar/case-studies/magicboo.html">
@@ -56,32 +56,81 @@
 </header>
 
 <main class="flex-1">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
     <a href="../index.html#projects" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline mb-8">
       <i data-lucide="arrow-left" class="w-4 h-4"></i>
       Back to Portfolio
     </a>
 
     <div class="flex items-center gap-3 mb-4">
-      <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+      <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0">
         <i data-lucide="layout-template" class="w-6 h-6"></i>
       </div>
       <div>
         <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">MagicBoo</h1>
-        <p class="text-sm text-slate-500 dark:text-slate-500">Automated Site Generation Platform</p>
+        <p class="text-sm text-slate-500 dark:text-slate-500">Automated Website Builder Platform</p>
       </div>
     </div>
 
-    <div class="mt-12 flex flex-col items-center justify-center text-center py-16 px-6 rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/40">
-      <i data-lucide="hammer" class="w-8 h-8 text-slate-400 dark:text-slate-600 mb-4"></i>
-      <h2 class="font-bold text-lg text-slate-900 dark:text-white">Full case study coming soon</h2>
-      <p class="mt-2 max-w-md text-sm text-slate-500 dark:text-slate-500">This page will detail the modular template engine and automated backend provisioning behind MagicBoo's multi-sector site generation.</p>
+    <div class="flex flex-wrap gap-2 mt-5 mb-10">
+      <span class="skill-badge">Laravel</span><span class="skill-badge">PHP</span><span class="skill-badge">MySQL</span>
+      <span class="skill-badge">Template Engine</span><span class="skill-badge">Automated Provisioning</span>
+      <span class="skill-badge">Built-in CMS</span><span class="skill-badge">Bilingual (AR/EN)</span>
+    </div>
+
+    <div class="space-y-12">
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Overview</h2>
+        <p class="leading-relaxed">MagicBoo is a template-driven website builder platform that takes a user from a blank slate to a complete, live website in under five minutes — no coding and no design experience required. It serves businesses, creators, and entrepreneurs who need a professional web presence without hiring a developer.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">The Challenge</h2>
+        <p class="leading-relaxed">Non-technical users needed a way to launch a fully responsive, professional website fast — while still being able to genuinely customize their branding (colors, fonts, content) rather than settle for a generic template, and to keep updating that content afterward without touching code or filing a request with a developer. The platform also had to serve both Arabic and English audiences from day one, and needed a reliable, automated way to handle what happens to a site's data once a subscription lapses.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Engineering Solution &amp; Architecture</h2>
+        <p class="leading-relaxed mb-6">The platform is built around a modular template engine and an automated provisioning pipeline that turns a template choice into a live site:</p>
+
+        <ul class="space-y-4">
+          <li class="flex gap-3">
+            <i data-lucide="layout-template" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">Modular template engine:</span> a library of 30+ pre-built, fully responsive templates spanning business sites, online stores, blogs, and portfolios, each swappable without touching the underlying codebase.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="rocket" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">Automated site provisioning:</span> selecting a template automatically provisions a fully configured, live site instance — collapsing what would normally be a manual setup process into an on-demand generation flow.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="settings-2" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">Built-in content management system:</span> every generated site ships with an integrated CMS, so owners can edit content, pages, and structure directly — no developer or redeployment required.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="palette" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">Live theming layer:</span> once a template is selected, colors, fonts, and branding can be customized directly on top of the template system without breaking its underlying structure.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="languages" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">Bilingual delivery (Arabic &amp; English):</span> the platform and every generated site support full Arabic/English delivery, including RTL layout, from a single content model.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="database" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">Automated account lifecycle:</span> subscription expiration triggers a defined grace-period window before an automated data-retention process runs its course — removing the need for manual account cleanup.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Key Results</h2>
+        <p class="leading-relaxed">Delivered a self-service platform that takes a user from template selection to a live, fully responsive, bilingual website in under five minutes, backed by a library of 30+ templates and an automated lifecycle system managing site data from creation through subscription expiration — with zero code and zero manual provisioning.</p>
+      </section>
     </div>
   </div>
 </main>
 
 <footer class="border-t border-slate-200 dark:border-slate-800 py-8">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 dark:text-slate-500">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 dark:text-slate-500">
     <p>&copy; <span id="year"></span> Haider Issa. All rights reserved.</p>
   </div>
 </footer>
@@ -95,5 +144,24 @@
   });
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
+<style>
+  .skill-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: rgb(241 245 249);
+    color: rgb(51 65 85);
+    border: 1px solid rgb(226 232 240);
+  }
+  .dark .skill-badge {
+    background-color: rgb(30 41 59);
+    color: rgb(203 213 225);
+    border-color: rgb(51 65 85);
+  }
+</style>
 </body>
 </html>

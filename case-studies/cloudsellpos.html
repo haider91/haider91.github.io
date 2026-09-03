@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CloudSellPOS — Case Study | Haider Issa</title>
-<meta name="description" content="Engineering case study: CloudSellPOS, a cloud accounting & POS platform by Haider Issa.">
+<meta name="description" content="Engineering case study: CloudSellPOS, a cloud ERP & POS platform with an automated, self-balancing accounting engine and ZATCA Phase 2 e-invoicing compliance, by Haider Issa.">
 
 <link rel="alternate" hreflang="en" href="https://haider91.github.io/case-studies/cloudsellpos.html">
 <link rel="alternate" hreflang="ar" href="https://haider91.github.io/ar/case-studies/cloudsellpos.html">
@@ -56,32 +56,79 @@
 </header>
 
 <main class="flex-1">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
     <a href="../index.html#projects" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline mb-8">
       <i data-lucide="arrow-left" class="w-4 h-4"></i>
       Back to Portfolio
     </a>
 
     <div class="flex items-center gap-3 mb-4">
-      <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+      <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0">
         <i data-lucide="receipt" class="w-6 h-6"></i>
       </div>
       <div>
         <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">CloudSellPOS</h1>
-        <p class="text-sm text-slate-500 dark:text-slate-500">Cloud Accounting &amp; POS Platform</p>
+        <p class="text-sm text-slate-500 dark:text-slate-500">Cloud ERP &amp; POS Platform</p>
       </div>
     </div>
 
-    <div class="mt-12 flex flex-col items-center justify-center text-center py-16 px-6 rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/40">
-      <i data-lucide="hammer" class="w-8 h-8 text-slate-400 dark:text-slate-600 mb-4"></i>
-      <h2 class="font-bold text-lg text-slate-900 dark:text-white">Full case study coming soon</h2>
-      <p class="mt-2 max-w-md text-sm text-slate-500 dark:text-slate-500">This page will detail the architecture, ZATCA e-invoicing integration, and the CloudSell Copilot AI assistant behind CloudSellPOS.</p>
+    <div class="flex flex-wrap gap-2 mt-5 mb-10">
+      <span class="skill-badge">Laravel</span><span class="skill-badge">PHP</span><span class="skill-badge">MySQL</span>
+      <span class="skill-badge">ZATCA / XAdES / XML UBL 2.1</span><span class="skill-badge">Multi-currency Accounting Engine</span>
+      <span class="skill-badge">Multi-tenancy</span><span class="skill-badge">Cloud Infrastructure</span>
+    </div>
+
+    <div class="space-y-12">
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Overview</h2>
+        <p class="leading-relaxed">CloudSellPOS is a fully cloud-based Point-of-Sale and ERP platform built for small and medium enterprises. It replaces paper ledgers and spreadsheet-driven bookkeeping with a single, centralized digital system — giving business owners real-time control over accounts, inventory, and financial reporting from any device, with zero local installation.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">The Challenge</h2>
+        <p class="leading-relaxed">Growing retail and distribution businesses were stuck with manual, error-prone accounting: invoices and payment vouchers went missing or untracked, warehouse stock across multiple locations drifted from what was actually on the shelf, field representatives' cashboxes couldn't be monitored in real time, and management had no reliable reporting to act on. Year-end financial closing was especially rigid — once a period closed, fixing an error meant reopening the books by hand with no safe way to recalculate everything downstream.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Engineering Solution &amp; Architecture</h2>
+        <p class="leading-relaxed mb-6">The platform is built around seven integrated modules — Accounts, Invoices, Vouchers, Items, Inventory, Currencies, and Reports — all driven by a single automated accounting core:</p>
+
+        <ul class="space-y-4">
+          <li class="flex gap-3">
+            <i data-lucide="scale" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">Self-balancing accounting engine:</span> every invoice, purchase, transfer, or voucher generates its own fully balanced double-entry journal entry automatically. Manual journal-entry editing is disabled by design, guaranteeing a permanently balanced trial balance.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="coins" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">Native multi-currency accounts:</span> accounts hold true running balances in every currency they trade in, instead of forcing a daily conversion entry — exchange variance is calculated automatically at period close.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="file-check-2" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">ZATCA Phase 2 e-invoicing compliance:</span> built two integration paths on top of digital signing, XAdES verification, and XML UBL 2.1 — an automated flow that transmits invoices instantly with a cryptographic stamp and QR code on approval, and a manual flow that lets a supervisor hold transmission during an audit or a connectivity outage.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="history" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">Recalculation engine for closed periods:</span> a financial manager can reopen and adjust the last closed cycle, and the system automatically re-derives every downstream rollover and balance instead of requiring a manual re-entry pass.</span>
+          </li>
+          <li class="flex gap-3">
+            <i data-lucide="shield-check" class="w-4 h-4 mt-1 text-indigo-600 dark:text-indigo-400 shrink-0"></i>
+            <span><span class="font-semibold text-slate-900 dark:text-white">Three-layer audit trail:</span> system-wide login/logout logs, a workflow archive that preserves prior versions of edited documents, and a dedicated financial-entries archive documenting every ledger adjustment.</span>
+          </li>
+        </ul>
+
+        <p class="leading-relaxed mt-6">An embedded AI financial assistant, <span class="font-semibold text-slate-900 dark:text-white">CloudSell Copilot</span>, was also built on top of this data layer to surface instant financial analytics and business insights.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Key Results</h2>
+        <p class="leading-relaxed">Delivered a cohesive ERP/POS platform spanning 7 integrated modules with a fully automated, self-balancing accounting engine, native multi-currency support, and full ZATCA Phase 2 compliance — running as a 100% cloud, zero-installation system with a three-layer audit trail for complete financial traceability.</p>
+      </section>
     </div>
   </div>
 </main>
 
 <footer class="border-t border-slate-200 dark:border-slate-800 py-8">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 dark:text-slate-500">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 dark:text-slate-500">
     <p>&copy; <span id="year"></span> Haider Issa. All rights reserved.</p>
   </div>
 </footer>
@@ -95,5 +142,24 @@
   });
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
+<style>
+  .skill-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: rgb(241 245 249);
+    color: rgb(51 65 85);
+    border: 1px solid rgb(226 232 240);
+  }
+  .dark .skill-badge {
+    background-color: rgb(30 41 59);
+    color: rgb(203 213 225);
+    border-color: rgb(51 65 85);
+  }
+</style>
 </body>
 </html>
