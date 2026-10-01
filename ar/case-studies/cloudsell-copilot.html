@@ -84,6 +84,45 @@
       </section>
 
       <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">قيد التشغيل</h2>
+        <p class="leading-relaxed mb-5">محادثة فعلية تجيب على سؤال مقارنة مبيعات برسم بياني، ونفس المساعد مدمج جنباً إلى جنب مع باقي مساحة العمل.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <figure class="m-0">
+            <button
+              type="button"
+              class="lightbox-trigger group relative block w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+              data-full="../../images/Cloudsell-Copilot/cloudsell-copilot-screenshot.png"
+              aria-label="فتح الصورة بالحجم الكامل للوحة محادثة Copilot"
+            >
+              <img src="../../images/Cloudsell-Copilot/cloudsell-copilot-screenshot.png" alt="لوحة محادثة CloudSell Copilot تجيب على سؤال مقارنة مبيعات برسم بياني حي ورابط للتقرير الكامل" class="w-full h-56 object-cover object-top transition-transform duration-300 group-hover:scale-[1.05]" loading="lazy">
+              <span class="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-colors">
+                <span class="opacity-0 group-hover:opacity-100 transition-opacity inline-flex items-center justify-center w-9 h-9 rounded-full bg-black/70 text-white backdrop-blur-sm">
+                  <i data-lucide="zoom-in" class="w-4 h-4"></i>
+                </span>
+              </span>
+            </button>
+            <figcaption class="mt-2 text-xs text-center text-slate-500 dark:text-slate-500">لوحة المحادثة الحية</figcaption>
+          </figure>
+          <figure class="m-0">
+            <button
+              type="button"
+              class="lightbox-trigger group relative block w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+              data-full="../../images/Cloudsell-Copilot/cloudsellpos-dashboard-with-copilot.png"
+              aria-label="فتح الصورة بالحجم الكامل لـ Copilot مدمجاً بلوحة تحكم CloudSellPOS"
+            >
+              <img src="../../images/Cloudsell-Copilot/cloudsellpos-dashboard-with-copilot.png" alt="لوحة CloudSell Copilot مفتوحة جنباً إلى جنب مع لوحة تحكم CloudSellPOS" class="w-full h-56 object-cover object-top transition-transform duration-300 group-hover:scale-[1.05]" loading="lazy">
+              <span class="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-colors">
+                <span class="opacity-0 group-hover:opacity-100 transition-opacity inline-flex items-center justify-center w-9 h-9 rounded-full bg-black/70 text-white backdrop-blur-sm">
+                  <i data-lucide="zoom-in" class="w-4 h-4"></i>
+                </span>
+              </span>
+            </button>
+            <figcaption class="mt-2 text-xs text-center text-slate-500 dark:text-slate-500">مدمج بمساحة العمل</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section>
         <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">التحدي</h2>
         <p class="leading-relaxed">أي نظام محاسبة ونقاط بيع متكامل يتراكم فيه عشرات الشاشات والتقارير المتخصصة — المبيعات، كشوفات الحسابات، المخزون، القيود اليومية، أداء المندوبين — وهو اتساع ضروري لكنه عبء يومي حقيقي. الوصول لرقم واحد بسيط كان يعني معرفة التقرير الصحيح بالضبط، وفتحه، وضبط الفلاتر المناسبة، وكان المستخدمون الجدد يواجهون منحنى تعلّم حقيقي فقط لمعرفة أين تقع كل معلومة. وأي طبقة ذكاء اصطناعي تُضاف فوق هذا النظام كان لازم تجاوب بأرقام حقيقية لا تخمينات مولَّدة، وما بيصح تشوف أو تكشف أي بيانات المستخدم السائل غير مصرَّح له بالأساس برؤيتها.</p>
       </section>
@@ -134,6 +173,24 @@
   </div>
 </footer>
 
+<div id="lightbox" class="hidden fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm overflow-y-auto" role="dialog" aria-modal="true" aria-label="معاينة الصورة">
+  <button id="lightbox-close" type="button" aria-label="إغلاق معاينة الصورة" class="fixed top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors z-10">
+    <i data-lucide="x" class="w-5 h-5"></i>
+  </button>
+  <button id="lightbox-prev" type="button" aria-label="الصورة السابقة" class="fixed right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors z-10">
+    <i data-lucide="chevron-right" class="w-5 h-5"></i>
+  </button>
+  <button id="lightbox-next" type="button" aria-label="الصورة التالية" class="fixed left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors z-10">
+    <i data-lucide="chevron-left" class="w-5 h-5"></i>
+  </button>
+  <div id="lightbox-backdrop" class="min-h-full flex items-center justify-center p-4 sm:p-8">
+    <figure class="m-0">
+      <img id="lightbox-img" src="" alt="" class="max-w-full h-auto rounded-lg shadow-2xl">
+      <figcaption id="lightbox-caption" class="mt-3 text-center text-sm text-white/70"></figcaption>
+    </figure>
+  </div>
+</div>
+
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
   lucide.createIcons();
@@ -142,6 +199,79 @@
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   });
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Image lightbox with gallery navigation
+  (function () {
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    var lightboxCaption = document.getElementById('lightbox-caption');
+    var closeBtn = document.getElementById('lightbox-close');
+    var prevBtn = document.getElementById('lightbox-prev');
+    var nextBtn = document.getElementById('lightbox-next');
+
+    var triggers = Array.prototype.slice.call(document.querySelectorAll('.lightbox-trigger'));
+    var items = triggers.map(function (trigger) {
+      var img = trigger.querySelector('img');
+      var caption = trigger.closest('figure');
+      caption = caption ? caption.querySelector('figcaption') : null;
+      return {
+        src: trigger.getAttribute('data-full'),
+        alt: img ? img.alt : '',
+        caption: caption ? caption.textContent : ''
+      };
+    });
+    var currentIndex = 0;
+    var hasNav = items.length > 1;
+    prevBtn.classList.toggle('hidden', !hasNav);
+    nextBtn.classList.toggle('hidden', !hasNav);
+
+    function render() {
+      var item = items[currentIndex];
+      lightboxImg.src = item.src;
+      lightboxImg.alt = item.alt;
+      lightboxCaption.textContent = hasNav
+        ? (currentIndex + 1) + ' / ' + items.length + (item.caption ? ' — ' + item.caption : '')
+        : (item.caption || '');
+    }
+    function openLightbox(index) {
+      currentIndex = index;
+      render();
+      lightbox.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+    function closeLightbox() {
+      lightbox.classList.add('hidden');
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+    }
+    function showNext() {
+      currentIndex = (currentIndex + 1) % items.length;
+      render();
+    }
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      render();
+    }
+
+    triggers.forEach(function (trigger, index) {
+      trigger.addEventListener('click', function () {
+        openLightbox(index);
+      });
+    });
+    closeBtn.addEventListener('click', closeLightbox);
+    nextBtn.addEventListener('click', showNext);
+    prevBtn.addEventListener('click', showPrev);
+    document.getElementById('lightbox-backdrop').addEventListener('click', function (e) {
+      if (e.target === e.currentTarget) closeLightbox();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (lightbox.classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') showPrev();
+      if (e.key === 'ArrowLeft') showNext();
+    });
+  })();
 </script>
 
 <style>

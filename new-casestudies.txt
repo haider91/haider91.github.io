@@ -1,0 +1,9 @@
+1- check website security headers automation using n8n
+2- generate landing page automation using openAI/Claude api & n8n
+3- linkedin Jobs Automation using n8n
+
+
+skills:
+1- automate testing website
+2- enhance website security
+3- enhance website performance
